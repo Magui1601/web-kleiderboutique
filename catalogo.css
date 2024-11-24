@@ -1,0 +1,255 @@
+/* Estilo para el encabezado del catálogo */
+.catalog-header {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.catalog-header-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.catalog-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor principal */
+.catalog-container {
+    display: flex;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+/* Contenedor de la barra lateral */
+/* Contenedor de la barra lateral */
+.filter-sidebar {
+    width: 300px; /* Ancho de la barra lateral */
+    padding: 30px 25px; /* Espaciado interno */
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Títulos de cada sección en la barra lateral */
+.filter-sidebar h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 15px; /* Espacio entre el título y el contenido */
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.filter-sidebar h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Espaciado entre secciones */
+.filter-sidebar h3 + ul {
+    margin-top: 15px; /* Espacio entre el título y el primer elemento de la lista */
+    margin-bottom: 25px; /* Espacio adicional al final de cada sección */
+}
+
+/* Texto de rango de precio */
+.filter-sidebar p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+/* Estilo de la barra de rango */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    outline: none;
+    margin: 0 0 20px;
+}
+
+/* Estilo de los controladores de la barra de rango */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Estilo del botón Filtrar */
+.filter-button {
+    background-color: #064C7D;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    width: auto;
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #052d4d;
+}
+
+/* Lista de enlaces */
+.filter-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-sidebar ul li {
+    font-size: 14px;
+    margin: 20px 0; /* Espacio entre los elementos de la lista */
+    letter-spacing: 0.5px;
+}
+
+.filter-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.filter-sidebar ul li a:hover {
+    color: #064C7D;
+}
+
+
+/* Sección de productos del catálogo */
+.catalogo-section {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px; /* Espacio entre las tarjetas */
+    justify-items: center;
+}
+
+.product-card {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.product-card:hover .product-image-container {
+    transform: translateY(-5px);
+}
+
+
+/* Información del producto fuera de la imagen */
+.product-info {
+    margin-top: 10px;
+    font-family: 'Arial', sans-serif;
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 0 0px; /* Añade un pequeño padding para espaciar el texto de los bordes */
+    margin-left: 0px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin: 5px 0 2px 0; /* Reduce el espacio debajo del nombre */
+}
+
+.product-info p {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6); /* Hace el precio más opaco */
+    margin: 0; /* Elimina cualquier margen adicional */
+}
+
+
+/* Superposición "Ver más detalles" */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.product-image-container:hover .overlay {
+    opacity: 1;
+}
+
+/* Estilo del botón "Ver más detalles" */
+.view-more-button {
+    background-color: white;
+    color: #333;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-more-button:hover {
+    background-color: #333;
+    color: white;
+}

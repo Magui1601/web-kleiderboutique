@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleider - Catálogo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación para escritorio -->
+    <div class="navbar">
+        <!-- Reemplazando el texto KLEIDER con la imagen -->
+        <a href="index.html" class="logo">
+            <img src="img/iconos/logo.png" alt="Logo Kleider" class="logo-img">
+        </a>
+        <div class="nav-links">
+            <a href="catalogo.html">Catálogo</a>
+            <a href="descuentos.html">Descuentos</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+            <a href="consejos.html">Consejos de Moda</a>
+            <a href="contacto.html">Contáctanos</a>
+        </div>
+        <div class="nav-icons">
+            <img id="search-btn" src="img/iconos/buscador.png" alt="Buscar" class="search-icon">
+
+            <!-- Overlay con el modal -->
+            <div id="search-popup-overlay" class="search-popup-overlay">
+                <div class="search-popup">
+                    <button class="close-btn" id="close-popup">&times;</button>
+                    <h2>¿Qué estás buscando?</h2>
+                    <p>Encuentra productos increíbles al mejor precio</p>
+                    <input type="text" placeholder="Buscar productos..." class="search-input">
+                </div>
+            </div>
+            
+            <a href="registro.html">
+                <img src="img/iconos/usuario.png" alt="Usuario" class="icon-style">
+            </a>
+            <a href="favoritos.html">
+                <img src="img/iconos/corazon.png" alt="Favoritos" class="icon-style">
+            </a>
+            <!-- Ícono del carrito sin enlace pero con funcionalidad de clic -->
+            <img src="img/iconos/carrito.png" alt="Carrito" class="icon-style bag-icon" onclick="toggleCart()">
+        </div>
+    </div>
+        <!-- Menú móvil -->
+    <div class="mobile-menu-container">
+        <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h3>MENÚ</h3>
+            </div>
+            <div class="mobile-menu-icons">
+                <img src="img/iconos/buscador.png" alt="Buscar" class="icon-style">
+                <img src="img/iconos/usuario.png" alt="Usuario" class="icon-style">
+                <img src="img/iconos/corazon.png" alt="Favoritos" class="icon-style">
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="descuentos.html">Descuentos</a></li>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="consejos.html">Consejos de Moda</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+</div>
+
+<!-- Mini Carrito -->
+<div class="mini-cart" id="miniCart">
+    <div class="mini-cart-header">
+        <h3>MI CARRITO</h3>
+        <button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="mini-cart-body" id="cartItems">
+        <!-- Los productos dinámicos se agregarán aquí -->
+        <p id="emptyCart">Tu carrito está vacío.</p>
+    </div>
+    <div class="mini-cart-footer">
+        <p>Subtotal: <strong id="cartSubtotal">0 Bs</strong></p>
+        <button class="cart-btn" onclick="goToCart()">Ver carrito</button>
+        <button class="cart-btn clear-cart-btn" onclick="clearCart()">Vaciar carrito</button>
+        <button class="checkout-btn">Finalizar compra</button>
+    </div>
+</div>
+
+<section class="texto-grande-section">
+    <div class="texto-container">
+        <p>
+            Tienda virtual Kleider Bolivia se reserva el derecho de actualizar y/o modificar los Términos y Condiciones que detallamos a continuación en cualquier momento, sin previo aviso. Por esta razón recomendamos revisar los Términos y Condiciones cada vez que utilice la página web.
+        </p>
+        <p>
+            Es requisito para comprar en la Tienda Virtual Kleider Bolivia la aceptación de los términos y condiciones descritas a continuación. Cualquier persona que realice una transacción mediante este canal, declara conocer y aceptar todas y cada uno de los términos y condiciones descritos a continuación. Asimismo, el acceso a los servicios de la Tienda Virtual Kleider Bolivia podría ocasionalmente verse suspendido o restringido por la realización de trabajos de mantenimiento o administración de los productos ofertados.
+        </p>
+        <p>
+            La tienda virtual Bolivia no se hace responsable cuando sus servicios se vean afectados por la naturaleza misma del internet, caso fortuito o fuerza mayor.
+        </p>
+        <h3>Registro del Cliente o Usuario (Cliente)</h3>
+        <p>
+            Para comprar productos en la tienda virtual Kleider Bolivia, no es necesario estar registrado. El registro de cada usuario se verificará completando y suscribiendo el formulario que aparece en el sitio y su posterior envío. Los datos necesarios para el registro son los siguientes: Nombre, Apellidos, Email, Clave, País de residencia, Tipo de documento, Número de documento, Fecha de nacimiento, Celular. Para acceder al registro del usuario, se deberán completar los datos que se indican  en el formulario de comprar posterior que realicen.
+        </p>
+        <p>
+            Para acceder al registro del usuario, se deberán aceptar los términos y condiciones de la web. En caso de no registrarse, el usuario deberá completar los datos que se indican en el formulario de compra con el fin de hacer efectiva la adquisición de productos o servicios.
+        </p>
+        <h3>Clave Secreta</h3>
+        <p>
+            El usuario dispondrá, una vez registrado, de un nombre y contraseña o clave definitiva que le permitirá el acceso personalizado, confidencial y seguro El usuario tendrá la posibilidad de cambiar la clave de acceso, para lo cual deberá sujetarse al procedimiento establecido en el sitio respectivo. El usuario asume totalmente la responsabilidad por el mantenimiento de la confidencialidad de su clave secrera registrada en este sitio web, la cual le premite efectuar compras, solicitar servicios y obtener informacion. Dicha clave es de uso personal y su entrega a terceros, no involucra responsabilidades de Kleider Bolivia.
+        </p>
+        <h3>Medios de Pagos</h3>
+        <p>
+            Los medios de pago que se pueden utilizar para compras en la tienda virtual Kleider Bolivia son: Tarjetas de crédito Visa y MasterCard.
+        </p>
+        <p>
+            Kleider otra causa justificada, y procederá a anular la transacción, cancelar el despacho del producto y solicitar al banco emisor de la tarjeta la devolución o extorno del importe comprometido.
+        </p>
+        <h3>Validez, Precio y Stock de las Ofertas Contenidas en este Sitio</h3>
+        <p>
+            Los precios de los productos consignados en la tienda virtual Kleider Bolivia son en moneda nacional (BOL BS/), y de igual manera los comprobantes de pago que se emiten.
+        </p>
+        <p>
+            Para validar la solicitud de compra, Kleider Perú deberá verificar lo siguiente:
+        </p>
+        <p>
+            Confirmar el precio del articulo de la orden. Es posible que el precio de alguno de los productos ofrecidos en nuestra tienda virtual Kleider Bolivia sea erróneo, por ello si el precio correcto del producto consignado en su solicitud de compra es más alto que el precio indicado en nuestra tienda virtual Kleider Bolivia, nosotros nos contactaremos con usted en un plazo de 3 días útiles para informarle este hecho a fin de que usted nos indique si procedemos con su envío teniendo como precio de venta el correcto o si cancelamos su orden.
+        </p>
+        <ul>
+            <li>Que el medio de pago utilizado por el usuario es válido y aceptado.</li>
+            <li>Que los datos registrados por el cliente en el sitio coinciden con los proporcionados al efectuar su aceptación de oferta.</li>
+            <li>Que se disponga de los productos solicitados en stock, el pedido puede sufrir un quiebre en algún producto solicitado.</li>
+            <li>Que el precio final incluya impuestos y gastos de envío</li>
+            <li>La etapa de validación concluye con la emisión de la boleta  de venta respectiva.</li>
+            <li>Únicamente luego de validada la solicitud de compra, los fondos previamente reservados serán  definitivamente cargados a la tarjeta de crédito o debitados de la tarjeta débito del Usuario. Kleider Bolivia se reserva el derecho de poder cambiar el estado de la orden en cualquier momento, siempre que se evidencie algún fraude en contra del titular de la compra o se produzca un error sistémico que distorsione el precio de las ofertas.</li>
+        </ul>
+        <p>
+            Concluida la validación Kleider Bolivia contactará al usuario telefónicamente o utilizará cualquier medio de comunicación que garantice el debido y portuno conocimiento del consumidor, eñ que se le indicará previamente en el mismo sitio, a fin de informarle el resultado de la misma. El consentimiento se entenderá fomrado desde el momento en que Kleider Bolivia concluya con éxito la validación e informe de la misma usuario.
+        </p>
+        <p>
+            En atención a lo señalado en los párrafos precedentes, y como una medida de protección a la seguridad de las transacciones, Kleider Bolivia podrá dejar sin efecto las compras en las que los datos entregados por el cliente no coincidan con las bases de datos disponibles de Kleider Bolivia, o respecto de las cuales no se hubiere efectuado la validación señalada precedentemente dentro de las 48 horas siguientes a la orden de compra. Esto es, si fuese necesario contactar al titular de una cuenta, y pasadas las 48 horas siguientes a la orden de compra no fuese posible, Kleider Bolivia dejará sin efecto dicha transacción (esto como medida de seguridad para el cliente), procediendo a comunicar este hecho al Banco emisor de la tarjeta de crédito utilizada por el consumidor al momento de enviar su solicitud de compra. El Banco emisor de la tarjeta de crédito que se utilizó para realizar la solicitud de compra en el sitio deberá proceder con la devolución o extorno del importe de acuerdo con sus Políticas.
+        </p>
+        <p>
+            Kleider Bolivia no se responsabiliza de la información proporcionada por otros sitios web y las consecuencias derivadas de ello, especialmente cuando el acceso al sitio de Kleider Bolivia se ha efectuado a través de un link o banner en sitios que no dispongan de contratos o alianzas con www.kleiderbolivia.com
+        </p>
+        <h3>Despacho de los Productos</h3>
+        <p>
+            Los productos adquiridos a través de la tienda virtual de Kleider Bolivia se sujetarán a las condiciones de despacho y entrega elegidas por el usuario y disponibles en el sitio. Cuando existan productos almacenados en diferentes fuentes, éstos serán despachados de manera independiente, de acuerdo a las alternativas disponibles en el sitio y escogidas por el usuario. La información del lugar de envío es de exclusiva responsabilidad del usuario. Los plazos elegidos para el despacho y entrega, se cuentan desde que Kleider Bolivia ha validado la solicitud de compra y el medio de pago utilizado, y se consideran días hábiles para el cumplimiento de dicho plazo.
+        </p>
+    </div>
+</section>
+
+<footer style="background-color: #000; padding: 40px 80px; color: white;">
+    <!-- Línea divisoria y logo en el centro -->
+    <div style="display: flex; align-items: center; justify-content: center; margin: 10px 0;">
+        <div style="flex: 1; border-top: 1px solid white;"></div>
+        <div style="padding: 0 20px;">
+            <img src="img/iconos/icono_negro.png" alt="Logo Kleider" style="height: 40px;">
+        </div>
+        <div style="flex: 1; border-top: 1px solid white;"></div>
+    </div>
+
+    <!-- Contenido del footer -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <!-- Redes Sociales -->
+        <div style="flex: 1; min-width: 200px;">
+            <h3>REDES SOCIALES</h3>
+            <p><i class="fab fa-facebook" style="margin-right: 10px;"></i>Kleider La Paz</p>
+            <p><i class="fab fa-instagram" style="margin-right: 10px;"></i>kleider_lp</p>
+        </div>
+
+        <!-- Información -->
+        <div style="flex: 1; min-width: 200px;">
+            <h3>INFORMACIÓN</h3>
+            <p><a href="condiciones.html" style="color: white; text-decoration: none;">Condiciones de envío</a></p>
+            <p><a href="politica.html" style="color: white; text-decoration: none;">Política de devolución</a></p>
+            <p><a href="terminos.html" style="color: white; text-decoration: none;">Términos y condiciones</a></p>
+        </div>
+
+        <!-- Suscripción -->
+        <div style="flex: 1; min-width: 200px;">
+            <h3>Mantente al tanto de nuestras novedades</h3>
+            <form style="display: flex;">
+                <input type="email" placeholder="Ingresa tu correo electrónico" style="padding: 10px; border-radius: 5px 0 0 5px; border: none; flex: 1;">
+                <button type="submit" style="padding: 10px 20px; background-color: #064C7D; color: white; border: none; border-radius: 0 5px 5px 0;">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Línea divisoria arriba del copyright -->
+    <div style="margin: 20px 0; border-top: 1px solid white;"></div>
+
+    <!-- Derechos reservados -->
+    <div style="text-align: center; color: white;">
+        <p>Copyright © 2024 Derechos Reservados por Kleider La Paz</p>
+    </div>
+</footer> 
+    <script src="js/script.js" defer></script>
+</body>
+</html>

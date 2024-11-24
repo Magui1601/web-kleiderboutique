@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleider - Catálogo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación para escritorio -->
+    <div class="navbar">
+        <!-- Reemplazando el texto KLEIDER con la imagen -->
+        <a href="index.html" class="logo">
+            <img src="img/iconos/logo.png" alt="Logo Kleider" class="logo-img">
+        </a>
+        <div class="nav-links">
+            <a href="catalogo.html">Catálogo</a>
+            <a href="descuentos.html">Descuentos</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+            <a href="consejos.html">Consejos de Moda</a>
+            <a href="contacto.html">Contáctanos</a>
+        </div>
+        <div class="nav-icons">
+            <img id="search-btn" src="img/iconos/buscador.png" alt="Buscar" class="search-icon">
+
+            <!-- Overlay con el modal -->
+            <div id="search-popup-overlay" class="search-popup-overlay">
+                <div class="search-popup">
+                    <button class="close-btn" id="close-popup">&times;</button>
+                    <h2>¿Qué estás buscando?</h2>
+                    <p>Encuentra productos increíbles al mejor precio</p>
+                    <input type="text" placeholder="Buscar productos..." class="search-input">
+                </div>
+            </div>
+            
+            <a href="registro.html">
+                <img src="img/iconos/usuario.png" alt="Usuario" class="icon-style">
+            </a>
+            <a href="favoritos.html">
+                <img src="img/iconos/corazon.png" alt="Favoritos" class="icon-style">
+            </a>
+            <!-- Ícono del carrito sin enlace pero con funcionalidad de clic -->
+            <img src="img/iconos/carrito.png" alt="Carrito" class="icon-style bag-icon" onclick="toggleCart()">
+        </div>
+    </div>
+        <!-- Menú móvil -->
+    <div class="mobile-menu-container">
+        <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h3>MENÚ</h3>
+            </div>
+            <div class="mobile-menu-icons">
+                <img src="img/iconos/buscador.png" alt="Buscar" class="icon-style">
+                <img src="img/iconos/usuario.png" alt="Usuario" class="icon-style">
+                <img src="img/iconos/corazon.png" alt="Favoritos" class="icon-style">
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="descuentos.html">Descuentos</a></li>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="consejos.html">Consejos de Moda</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+</div>
+
+<!-- Mini Carrito -->
+<div class="mini-cart" id="miniCart">
+    <div class="mini-cart-header">
+        <h3>MI CARRITO</h3>
+        <button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="mini-cart-body" id="cartItems">
+        <!-- Los productos dinámicos se agregarán aquí -->
+        <p id="emptyCart">Tu carrito está vacío.</p>
+    </div>
+    <div class="mini-cart-footer">
+        <p>Subtotal: <strong id="cartSubtotal">0 Bs</strong></p>
+        <button class="cart-btn" onclick="goToCart()">Ver carrito</button>
+        <button class="cart-btn clear-cart-btn" onclick="clearCart()">Vaciar carrito</button>
+        <button class="checkout-btn">Finalizar compra</button>
+    </div>
+</div>
+
+
+
+    <!-- Contenido de la página de Catálogo -->
+    <!-- Encabezado del catálogo -->
+    <section class="catalog-header">
+        <img src="img/banner1.jpg" alt="Imagen de encabezado del catálogo" class="catalog-header-img">
+        <h1 class="catalog-title">¡Todos nuestros productos!</h1>
+    </section>
+
+    <!-- Contenedor principal -->
+    <div class="catalog-container">
+        <!-- Barra lateral de filtros -->
+        <aside class="filter-sidebar">
+            <h3>FILTRAR POR PRECIO</h3>
+            <p>Precio: Bs/100 - Bs/1100</p>
+            <input type="range" min="100" max="1100" value="600" class="slider">
+            <button class="filter-button">Filtrar</button>
+            
+            <h3>LÍNEAS</h3>
+            <ul>
+                <li><a href="#">• Oficina</a></li>
+                <li><a href="#">• Casual</a></li>
+                <li><a href="#">• Cocktail</a></li>
+            </ul>
+
+            <h3>TALLAS</h3>
+            <ul>
+                <li><a href="#">• S</a></li>
+                <li><a href="#">• M</a></li>
+                <li><a href="#">• L</a></li>
+            </ul>
+
+            <h3>PRODUCTOS</h3>
+            <ul>
+                <li><a href="#">• Abrigos</a></li>
+                <li><a href="#">• Blusas</a></li>
+                <li><a href="#">• Sacos</a></li>
+            </ul>
+        </aside>
+       <!-- Sección de productos -->
+        <section class="catalogo-section">
+            <div class="product-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/090A8346-scaled (1).jpg" alt="Saco Serenity">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_1.html'">Ver más detalles</button>
+                        </div>
+                                               
+                    </div>
+                    <div class="product-info">
+                        <h3>Saco Serenity</h3>
+                        <p>Bs/300</p>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/IMG_9889-750x1125.jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_2.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sastre Melba</h3>
+                        <p>Bs/1100</p>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="img/nueva_imagen.jpg" alt="Saco Serenity">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_3.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sastre Francina</h3>
+                        <p>Bs/1100</p>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/IMG_2752-scaled.jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_4.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sastre Melesia</h3>
+                        <p>Bs/1100</p>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/54-scaled.jpg" alt="Saco Serenity">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_5.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido pili</h3>
+                        <p>Bs/400</p>
+                    </div>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/090A8102-Mejorado-NR-scaled.jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_6.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pantalon Venturini</h3>
+                        <p>Bs/320</p>
+                    </div>
+                </div>
+
+                <!-- Producto 7 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/090A7991-Mejorado-NR-scaled (1).jpg" alt="Saco Serenity">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_7.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Blusa Alexandra</h3>
+                        <p>Bs/220</p>
+                    </div>
+                </div>
+
+                <!-- Producto 8 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/090A7943-Mejorado-NR-scaled (1).jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_8.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pantalon Mencia</h3>
+                        <p>Bs/320</p>
+                    </div>
+                </div>
+
+                <!-- Producto 9 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/090A7579-Mejorado-NR-scaled (1).jpg" alt="Saco Serenity">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_9.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Korana</h3>
+                        <p>Bs/400</p>
+                    </div>
+                </div>
+
+                <!-- Producto 10 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/090A7542-Mejorado-NR-scaled.jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_10.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Sastre Sephora</h3>
+                        <p>Bs/1100</p>
+                    </div>
+                </div>
+
+                <!-- Producto 11 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/090A7429-Mejorado-NR-scaled (1).jpg" alt="Saco Serenity">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_11.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Saco Meritza</h3>
+                        <p>Bs/300</p>
+                    </div>
+                </div>
+                 <!-- Producto 12 -->
+                 <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/090A7344-Mejorado-NR-scaled (1).jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_12.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Abrigo Yaira</h3>
+                        <p>Bs/800</p>
+                    </div>
+                </div>
+                <!-- Producto 12 -->
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/149-scaled.jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_13.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Polo New Andrea</h3>
+                        <p>Bs/200</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/IMG_9901-scaled.jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_14.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Abrigo Esmeralda</h3>
+                        <p>Bs/800</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/Vestido Mirei.jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_15.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Mirei</h3>
+                        <p>Bs/400</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="Kleider_web/090A8385-scaled.jpg" alt="Sastre Melba">
+                        <div class="overlay">
+                            <button class="view-more-button" onclick="window.location.href='producto_16.html'">Ver más detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Polo Berit</h3>
+                        <p>Bs/200</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer style="background-color: #000; padding: 40px 80px; color: white;">
+        <!-- Línea divisoria y logo en el centro -->
+        <div style="display: flex; align-items: center; justify-content: center; margin: 10px 0;">
+            <div style="flex: 1; border-top: 1px solid white;"></div>
+            <div style="padding: 0 20px;">
+                <img src="img/iconos/icono_negro.png" alt="Logo Kleider" style="height: 40px;">
+            </div>
+            <div style="flex: 1; border-top: 1px solid white;"></div>
+        </div>
+    
+        <!-- Contenido del footer -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <!-- Redes Sociales -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>REDES SOCIALES</h3>
+                <p><i class="fab fa-facebook" style="margin-right: 10px;"></i>Kleider La Paz</p>
+                <p><i class="fab fa-instagram" style="margin-right: 10px;"></i>kleider_lp</p>
+            </div>
+    
+            <!-- Información -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>INFORMACIÓN</h3>
+                <p><a href="condiciones.html" style="color: white; text-decoration: none;">Condiciones de envío</a></p>
+                <p><a href="politica.html" style="color: white; text-decoration: none;">Política de devolución</a></p>
+                <p><a href="terminos.html" style="color: white; text-decoration: none;">Términos y condiciones</a></p>
+            </div>
+    
+            <!-- Suscripción -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Mantente al tanto de nuestras novedades</h3>
+                <form style="display: flex;">
+                    <input type="email" placeholder="Ingresa tu correo electrónico" style="padding: 10px; border-radius: 5px 0 0 5px; border: none; flex: 1;">
+                    <button type="submit" style="padding: 10px 20px; background-color: #064C7D; color: white; border: none; border-radius: 0 5px 5px 0;">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Línea divisoria arriba del copyright -->
+        <div style="margin: 20px 0; border-top: 1px solid white;"></div>
+    
+        <!-- Derechos reservados -->
+        <div style="text-align: center; color: white;">
+            <p>Copyright © 2024 Derechos Reservados por Kleider La Paz</p>
+        </div>
+    </footer>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

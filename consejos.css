@@ -1,0 +1,242 @@
+/* Estilos para la sección de consejos */
+.fashion-tips-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+/* Estilos para el texto */
+.fashion-tips-text {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.fashion-tips-text h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.fashion-tips-text h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.fashion-tips-text p {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #000000;
+}
+
+/* Ajuste del tamaño de la imagen */
+.fashion-tips-image {
+    flex: 0 0 50%; /* Mantiene el ancho al 50% */
+    max-width: 600px; /* Ajuste de máximo ancho */
+    height: 600px; /* Define una altura específica */
+}
+
+.fashion-tips-image img {
+    width: 100%;
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+    object-fit: cover; /* Ajusta la imagen para que no se distorsione, cubriendo todo el contenedor */
+    border-radius: 10px;
+}
+
+/* Sección de cita y tips */
+.fashion-tips-quote-section {
+    padding: 50px 80px;
+    background-color: #f5f5f5;
+}
+
+.fashion-quote blockquote {
+    font-size: 24px;
+    font-style: italic;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fashion-quote footer {
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.fashion-tips-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.fashion-tips-text {
+    flex: 1;
+    max-width: 60%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.fashion-tips-text h3 {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.fashion-tips-text p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.fashion-tips-image {
+    flex: 1;
+    max-width: 35%; /* Cambié el ancho máximo para que la imagen sea más pequeña */
+    margin-left: 20px;
+}
+
+.fashion-tips-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Consejos conscientes */
+.fashion-conscious-tips {
+    margin-top: 50px;
+}
+
+.fashion-conscious-tips h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.fashion-conscious-tips hr {
+    width: 100px;
+    height: 2px;
+    background-color: #333;
+    border: none;
+    margin: 10px 0;
+}
+
+.fashion-conscious-tips p {
+    line-height: 1.6;
+}
+
+.fashion-advice {
+    margin: 40px 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.fashion-advice h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.fashion-advice hr {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    margin: 10px 0;
+    border: none;
+}
+
+.fashion-advice p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fashion-advice h4 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.image-layout-custom {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.small {
+    width: 100%;
+}
+
+.top {
+    position: relative;
+    bottom: -100px; /* Ajusta este valor para mover la imagen hacia arriba */
+}
+
+.bottom {
+    position: relative;
+    top: -100px; /* Ajusta este valor para mover la imagen hacia abajo */
+}
+
+.care-section {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+.care-text {
+    max-width: 85%;
+
+}
+
+.care-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.care-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.care-image {
+    width: 100%;
+    max-width: 100%;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+}
+
+.care-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}

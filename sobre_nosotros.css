@@ -1,0 +1,124 @@
+/* Estilos para la sección "Sobre Nosotros" */
+.about-section {
+    text-align: center;
+    background-color: #f3f3f3; /* Fondo gris claro */
+    padding: 40px 20px;
+    color: #333;
+}
+
+.about-section h1 {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 24px;
+    max-width: 1200px; /* Controla el ancho máximo */
+    margin: 30px auto; /* Centra el contenido horizontalmente */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+.about-image {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Sección Misión y Visión */
+.mission-vision-section {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    gap: 40px; /* Espaciado entre las secciones de misión y visión */
+    padding: 40px 20px; /* Espaciado interno */
+    background-color: #f3f3f3; /* Fondo gris claro */
+}
+
+/* Estilo general para Misión y Visión */
+.mission, .vision {
+    display: flex; /* Alinea texto e imagen horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px; /* Espacio entre imagen y texto */
+    max-width: 900px; /* Ancho máximo de cada bloque */
+
+}
+
+/* Estilo para imágenes */
+.mission-image, .vision-image {
+    width: 60%; /* Ancho ajustado de las imágenes */
+    max-width: 1400; /* Ancho máximo de las imágenes */
+    height: auto; /* Mantiene proporción de las imágenes */
+    border-radius: 10px; /* Bordes redondeados */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarla */
+}
+
+/* Estilo para los contenedores de texto */
+.mission-text, .vision-text {
+    max-width: 600px; /* Ancho máximo del texto */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Estilo para títulos */
+.mission-text h2, .vision-text h2 {
+    font-size: 82px; /* Tamaño del texto del título */
+    font-weight: bold; /* Resalta los títulos */
+    margin-bottom: 10px; /* Espaciado inferior del título */
+    margin-left: 10px; /* Espaciado inferior del título */
+    color: #000; /* Color del título */
+}
+
+/* Estilo para los párrafos */
+.mission-text p, .vision-text p {
+    font-size: 32px; /* Tamaño del texto */
+    color: #333; /* Color del texto */
+    line-height: 1.0; /* Espaciado entre líneas */
+    margin-left: 10px; /* Espaciado inferior del título */
+    width: 650px;
+}
+
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .mission, .vision {
+        flex-direction: column; /* Alinea los elementos verticalmente en pantallas pequeñas */
+        text-align: center; /* Centra el texto */
+    }
+
+    .mission-image, .vision-image {
+        width: 80%; /* Reduce el ancho de las imágenes */
+    }
+
+    .mission-text, .vision-text {
+        max-width: 100%; /* Permite que el texto use todo el ancho disponible */
+    }
+}
+
+/* Estilos para la sección de valores */
+.valores-section {
+    text-align: center;
+    background-color: #f3f3f3; /* Fondo gris claro */
+    padding: 40px 20px;
+    color: #333; /* Color del texto */
+}
+
+.valores-section h1 {
+    font-size: 72px; /* Tamaño grande para el título */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.valores-section p {
+    font-size: 24px; /* Tamaño del texto */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 30px auto; /* Centrado horizontal */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+.valores-image {
+    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+    height: 370px; /* Altura fija */
+    border-radius: 10px; /* Bordes redondeados */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    margin-top: 20px; /* Espaciado superior */
+}

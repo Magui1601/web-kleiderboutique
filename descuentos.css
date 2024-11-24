@@ -1,0 +1,146 @@
+/* Estilo para el encabezado del catálogo */
+.catalog-header {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.catalog-header-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.catalog-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenedor principal */
+.catalog-container {
+    display: flex;
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+/* Sección de descuentos */
+.descuentos-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.descuentos-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estructura similar al catálogo con tarjetas más grandes */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Aumenta el tamaño mínimo de la tarjeta */
+    gap: 40px; /* Aumenta el espacio entre tarjetas */
+    justify-items: center;
+}
+
+.product-card {
+    width: 100%;
+    max-width: 350px; /* Aumenta el ancho máximo de cada tarjeta */
+    text-align: center;
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 400px; /* Aumenta la altura de la imagen */
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.product-card:hover .product-image-container {
+    transform: translateY(-5px);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-image-container:hover .overlay {
+    opacity: 1;
+}
+
+.view-more-button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: normal; /* Cambia 'bold' por 'normal' */
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Información del producto fuera de la imagen */
+.product-info {
+    margin-top: 15px; /* Aumenta el espacio entre la imagen y la información */
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    padding: 0 0px;
+    margin-left: 0px;
+}
+
+.product-info h3 {
+    font-size: 18px; /* Aumenta el tamaño de la fuente para el nombre del producto */
+    color: #333;
+    font-weight: bold;
+    margin: 5px 0 2px;
+}
+
+.product-info p {
+    font-size: 16px; /* Aumenta el tamaño de la fuente para el precio */
+    margin: 0;
+}
+
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 16px;
+}
+.old-price1 {
+    color: #999;
+    font-size: 16px;
+}
+
+.discounted-price {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

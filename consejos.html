@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kleider - Consejos de Moda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/consejos.css">
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación para escritorio -->
+    <div class="navbar">
+        <!-- Reemplazando el texto KLEIDER con la imagen -->
+        <a href="index.html" class="logo">
+            <img src="img/iconos/logo.png" alt="Logo Kleider" class="logo-img">
+        </a>
+        <div class="nav-links">
+            <a href="catalogo.html">Catálogo</a>
+            <a href="descuentos.html">Descuentos</a>
+            <a href="sobre_nosotros.html">Sobre Nosotros</a>
+            <a href="consejos.html">Consejos de Moda</a>
+            <a href="contacto.html">Contáctanos</a>
+        </div>
+        <div class="nav-icons">
+            <img id="search-btn" src="img/iconos/buscador.png" alt="Buscar" class="search-icon">
+
+            <!-- Overlay con el modal -->
+            <div id="search-popup-overlay" class="search-popup-overlay">
+                <div class="search-popup">
+                    <button class="close-btn" id="close-popup">&times;</button>
+                    <h2>¿Qué estás buscando?</h2>
+                    <p>Encuentra productos increíbles al mejor precio</p>
+                    <input type="text" placeholder="Buscar productos..." class="search-input">
+                </div>
+            </div>
+            
+            <a href="registro.html">
+                <img src="img/iconos/usuario.png" alt="Usuario" class="icon-style">
+            </a>
+            <a href="favoritos.html">
+                <img src="img/iconos/corazon.png" alt="Favoritos" class="icon-style">
+            </a>
+            <!-- Ícono del carrito sin enlace pero con funcionalidad de clic -->
+            <img src="img/iconos/carrito.png" alt="Carrito" class="icon-style bag-icon" onclick="toggleCart()">
+        </div>
+    </div>
+        <!-- Menú móvil -->
+    <div class="mobile-menu-container">
+        <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h3>MENÚ</h3>
+            </div>
+            <div class="mobile-menu-icons">
+                <img src="img/iconos/buscador.png" alt="Buscar" class="icon-style">
+                <img src="img/iconos/usuario.png" alt="Usuario" class="icon-style">
+                <img src="img/iconos/corazon.png" alt="Favoritos" class="icon-style">
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="descuentos.html">Descuentos</a></li>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="consejos.html">Consejos de Moda</a></li>
+                <li><a href="contacto.html">Contáctanos</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+    <!-- Mini Carrito -->
+<div class="mini-cart" id="miniCart">
+    <div class="mini-cart-header">
+        <h3>MI CARRITO</h3>
+        <button class="close-cart" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="mini-cart-body" id="cartItems">
+        <!-- Los productos dinámicos se agregarán aquí -->
+        <p id="emptyCart">Tu carrito está vacío.</p>
+    </div>
+    <div class="mini-cart-footer">
+        <p>Subtotal: <strong id="cartSubtotal">0 Bs</strong></p>
+        <button class="cart-btn" onclick="goToCart()">Ver carrito</button>
+        <button class="cart-btn clear-cart-btn" onclick="clearCart()">Vaciar carrito</button>
+        <button class="checkout-btn">Finalizar compra</button>
+    </div>
+</div>
+
+    <!-- Sección de Consejos de Moda -->
+    <section class="fashion-tips-section">
+        <div class="fashion-tips-text">
+            <h1>Tres tips de moda para encontrar tu mejor estilo</h1>
+
+            <h2>Agregar un detalle a las prendas básicas</h2>
+            <p>Antes de tener prendas muy extravagantes, es primordial tener piezas básicas en colores neutros.</p>
+            <p>Te recomendamos que cuando se tengan estas prendas, adquieras algunos accesorios diferentes que le den un aire diferente a tu look.</p>
+            <p>Por ejemplo, una pañoleta, un cinturón o un bolso que contraste con los colores que lleves en tu outfit, no olvidemos la joyería como pulseras, aretes, collares, los cuales suelen ser la mejor elección para resaltar.</p>
+
+            <h2>Mezclar ideas</h2>
+            <p>La revista <em>Elle</em> recomienda dejar volar la imaginación. Aunque dos prendas puedan parecer de estilos diferentes, puede intentar combinarlas.</p>
+            <p>Aunque habrá algunas que no saldrán tan bien, practicar con esta técnica puede dar inspiración para encontrar cuál es tu estilo. Prueba los 'outfits' una y otra vez hasta que encuentres el que te gusta, después de todo alguna de estas combinaciones será tu favorita.</p>
+        </div>
+
+        <!-- Imagen al lado derecho -->
+        <div class="fashion-tips-image">
+            <img src="img/closey1.jpg" alt="Consejos de Moda">
+        </div>
+    </section>
+
+    <section class="fashion-tips-quote-section">
+        <div class="fashion-quote">
+            <blockquote>
+                <p>" El estilo no es solo lo que usas, sino también lo que proyectas. "</p>
+                <footer>- Carolina Herrera </footer>
+            </blockquote>
+        </div>
+        <div class="fashion-tips-content">
+            <div class="fashion-tips-text">
+                <h3>Optar por el bicolor o monocolor</h3>
+                <p>
+                    Cuando sienta confusión sobre cómo combinar materiales y texturas, intente probarlos primero en una sola gama de color; máximo en dos.
+                </p>
+                <p>
+                    De esta forma irá practicando las mezclas, pero reducirá el margen de error del resultado final porque eliminará un factor a combinar: el color. Es importante tener este detalle en cuenta ya que tanto para prendas bicolores o monocolores existen variedad de opciones.
+                </p>
+            </div>
+            <div class="fashion-tips-image">
+                <img src="img/consejos2.jpg" alt="Estilo monocolor">
+            </div>
+        </div>
+    
+        <div class="fashion-advice">
+            <h3>Consejos de moda consciente con lo que tienes en casa</h3>
+            <hr>
+            <p>
+                A fin de año, tanto hombres como mujeres buscamos prendas por doquier, salimos de compras, deseamos estrenar ropa nueva, compramos una o muchas prendas y en realidad después las usamos poco. En este artículo te daremos algunos tips de moda consciente para que puedas aprovechar más la ropa que tienes en casa.
+            </p>
+            <p>
+                La moda consciente o sostenible no tiene que ver con comprar solamente prendas de textiles naturales o tener un armario minimalista. Hay muchas maneras de renovar tu armario de forma consciente y adentrarte en este proceso.
+            </p>
+        
+            <h4>Revisa tu armario varias veces al año</h4>
+            <p>
+                A veces cuando hacemos una limpieza general en el dormitorio o el armario, de seguro encontraremos prendas que hace mucho tiempo no usamos. Esto puede suceder porque son prendas de temporadas pasadas o porque ya hayan pasado de moda y no sabemos cómo reutilizarlas. El consumo consciente comienza en lo que ya tenemos en el armario.
+            </p>
+        </div>
+        
+               
+    </section>  
+    <div class="image-layout-custom">
+        <div class="image-item small top">
+            <img src="img/cafe1.jpg" alt="Abrigo marrón pequeño">
+        </div>
+        <div class="image-item large">
+            <img src="img/closet.jpg" alt="Closet organizado">
+        </div>
+        <div class="image-item small bottom">
+            <img src="img/cafe2.jpg" alt="Modelo con abrigo marrón">
+        </div>
+    </div>
+    <section class="care-section">
+        <div class="care-text">
+            <h2>Cuida las prendas que ya tienes para valorar más tu armario y el dinero que inviertes en ellas</h2>
+            <p>
+                Sí, parece un tip muy obvio, pero las etiquetas están allí por algo. Una vez que sabemos de qué material está compuesta nuestra ropa,
+                el siguiente paso para consumir conscientemente es entender las etiquetas de cuidado. Poder leer los pictogramas y saber el cuidado que debemos
+                darle a cada una de nuestras prendas es imprescindible para que su vida útil sea aún más larga.
+            </p>
+            <p>
+                El lavado y el secado dependerán del material de la prenda. También es importante saber si se puede usar productos para blanquear o no. Este
+                punto sobre el cuidado de las prendas nos hará valorar mucho más nuestro armario y lo que tenemos.
+            </p>
+        </div>
+        <div class="care-image">
+            <img src="img/banner_consejos.jpg" alt="Modelo cuidando prendas">
+        </div>
+        <div class="care-text">
+            <h2>Repara, renueva y dale una segunda vida a tus prendas</h2>
+            <p>
+                
+Si encontramos prendas muy gastadas o rotas podremos reutilizarlas para hacer manualidades con los más chicos o para nosotras mismas. Para darle una segunda vida a tus camisetas. Si la prenda en cuestión se puede reparar, puedes utilizar piedras, bordados e incluso restos de tela.
+
+            </p>
+            <p>
+                
+Este punto es súper necesario, porque la prenda no terminará en el bote de basura. La industria de la moda es la más contaminante del planeta y el consumo desmedido y el fast fashion están fomentando cada vez más esta situación. Estos consejos de moda consciente son la base para empezar a consumir de forma y amigable con el medio ambiente. Esperamos que te sean útiles y los empieces a poner en práctica.
+            </p>
+        </div>
+    </section>
+    
+    
+    <footer style="background-color: #000; padding: 40px 80px; color: white;">
+        <!-- Línea divisoria y logo en el centro -->
+        <div style="display: flex; align-items: center; justify-content: center; margin: 10px 0;">
+            <div style="flex: 1; border-top: 1px solid white;"></div>
+            <div style="padding: 0 20px;">
+                <img src="img/iconos/icono_negro.png" alt="Logo Kleider" style="height: 40px;">
+            </div>
+            <div style="flex: 1; border-top: 1px solid white;"></div>
+        </div>
+    
+        <!-- Contenido del footer -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <!-- Redes Sociales -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>REDES SOCIALES</h3>
+                <p><i class="fab fa-facebook" style="margin-right: 10px;"></i>Kleider La Paz</p>
+                <p><i class="fab fa-instagram" style="margin-right: 10px;"></i>kleider_lp</p>
+            </div>
+    
+            <!-- Información -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>INFORMACIÓN</h3>
+                <p><a href="condiciones.html" style="color: white; text-decoration: none;">Condiciones de envío</a></p>
+                <p><a href="politica.html" style="color: white; text-decoration: none;">Política de devolución</a></p>
+                <p><a href="terminos.html" style="color: white; text-decoration: none;">Términos y condiciones</a></p>
+            </div>
+    
+            <!-- Suscripción -->
+            <div style="flex: 1; min-width: 200px;">
+                <h3>Mantente al tanto de nuestras novedades</h3>
+                <form style="display: flex;">
+                    <input type="email" placeholder="Ingresa tu correo electrónico" style="padding: 10px; border-radius: 5px 0 0 5px; border: none; flex: 1;">
+                    <button type="submit" style="padding: 10px 20px; background-color: #064C7D; color: white; border: none; border-radius: 0 5px 5px 0;">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Línea divisoria arriba del copyright -->
+        <div style="margin: 20px 0; border-top: 1px solid white;"></div>
+    
+        <!-- Derechos reservados -->
+        <div style="text-align: center; color: white;">
+            <p>Copyright © 2024 Derechos Reservados por Kleider La Paz</p>
+        </div>
+    </footer>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

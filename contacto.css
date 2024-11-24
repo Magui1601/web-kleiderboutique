@@ -1,0 +1,128 @@
+/* Estilo para la sección de contacto */
+.contact-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+.contact-header h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Contenedor de las tarjetas de contacto */
+.contact-info-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas de contacto */
+.contact-card {
+    background-color: #10304a;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card i {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+/* Efecto hover */
+.contact-card:hover {
+    transform: translateY(-10px); /* Mueve la tarjeta hacia arriba */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Agrega sombra */
+    background-color: #14577b; /* Color más claro para destacar */
+}
+
+/* Títulos y texto */
+.contact-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 16px;
+    line-height: 1.0;
+}
+
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0px;
+}
+
+
+
+/* Estilo para la sección de mapa y formulario de contacto */
+.contact-map-form {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.contact-map {
+    flex: 2; /* Incrementamos el tamaño del mapa */
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+
+/* Formulario de contacto */
+.contact-form {
+    flex: 1; /* Ajustamos el tamaño del formulario */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-form button {
+    background-color: #10304a;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #053A5D;
+}
